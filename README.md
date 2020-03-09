@@ -80,7 +80,7 @@ contained in the modules in folder `\src`:
     `propagateInitialCondition`.
 
 Further, the folders `\numExp01_stationarySolution` and
-`numExp02_propagationScenarios` contain scripts that implement example
+`\numExp02_propagationScenarios` contain scripts that implement example
 workflows ranging from the specification of a propagation scenario to the
 visualization of the generated raw data.
 
@@ -100,7 +100,7 @@ oscillating dissipative solitons in the LLE including third order dispersion
 
 > O. Melchert, A. Demircan, A. Yulin, "Multi-frequency radiation of dissipative solitons in optical fiber cavities," submitted (2020) 
 
-and the dynamics of LDSs in the GLLE with negative quartic group-velocity dispersion 
+and the dynamics of localized dissipative structures in the generalized LLE with negative quartic group-velocity dispersion 
 
 > O. Melchert, A. Yulin, A. Demircan, "Dynamics of localized dissipative structures in a generalized Lugiato-Lefever model with negative quartic group-velocity dispersion," submitted (2020) 
 
