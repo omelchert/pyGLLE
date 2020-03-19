@@ -36,7 +36,6 @@ class DataHandler():
             Ax (numpy-array, ndim=1): field components 
         """
         if n%self.nSkip==0:
-            print n
             self.Axt.append(Ax)
             self.t.append(t)
             self.x = x
@@ -62,6 +61,7 @@ class DataHandler():
 
             with open(path + fName + '.npz', 'w') as f:
                 np.savez_compressed(f,
+                        info=self.info,
                         x=np.asarray(self.x),
                         t=np.asarray(self.t),
                         Axt=np.asarray(self.Axt))
