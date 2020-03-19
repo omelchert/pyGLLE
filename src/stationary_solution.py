@@ -47,14 +47,8 @@ def stationarySolution(x, A_ini, LLE_rhs, tol):
     """
     k = sfft.fftfreq(x.size,d=x[1]-x[0])*2*np.pi
 
-    def fvec(A):
-        f = LLE_rhs(A)
-        #sys.stderr.write("sum(abs(A)) = %lf\n"%(np.sum(np.abs(f))))
-        return f
-
     A_opt = root(
             lambda A_r: (LLE_rhs(A_r.view(np.complex128))).view(np.float64),
-            #lambda A_r: (fvec(A_r.view(np.complex128))).view(np.float64),
             np.array(A_ini, dtype=np.complex128).view(np.float64),
             method='krylov',
             tol=tol
