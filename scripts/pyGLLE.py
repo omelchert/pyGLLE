@@ -1,5 +1,9 @@
 """ pyGLLE.py
 
+Main script implementing functions for determining stationary solutions to the
+standard Lugiato-Lefever equation (LLE) and for propagating a user supplied
+initial condtions in terms of the genaralized LLE.
+
 AUTHOR: O. Melchert
 DATE: 2020-01-17
 """
@@ -15,7 +19,27 @@ from solver import solve
 __version__='1.0'
 
 
-def findStationarySolution(setup, tol=1e-8):
+def findStationarySolution(setup, tol=1e-10):
+    """determine stationary solution for standard LLE
+
+    uses root-finding procedure to determine stationary solution to the
+    standard Lugiato-Lefever equation
+
+    Args:
+        setup (object): interface class holding simulation paramters
+        tol (float): tolerance for root-finding procedure  (default 1e-10)
+
+    Returns: nothing, but saves result of root-finding procedure in folder
+       ./data_stationary_solution/. The stored data consists of
+
+        x (array): discrete x-mesh defining the computational domain
+        Ax0_ini (array): trial solution
+        Ax0 (array): result of root-finding procedure
+        P (float): amplitude of homogeneous driving field
+        theta (float): detuning
+        Nx (int): number of mesh-points for discretizing x
+        xMax (float): bound of x domain
+    """
 
     # -- INITIALIZE COMPUTATIONAL DOMAIN
     x = np.linspace(-setup.xMax, setup.xMax, setup.Nx, endpoint=False)
@@ -25,7 +49,7 @@ def findStationarySolution(setup, tol=1e-8):
     def _LLE_rhs(P, theta):
         return lambda A: P -(1+1j*theta)*A + sfft.fft((-1j*k*k)*sfft.ifft(A)) + 1j*np.abs(A)**2*A
 
-    # -- ANSATZ FOR LOCALIZED SOLUTION
+    # -- FETCH USER DEFINED TRIAL SOLUTION
     Ax0_loc = setup.initial_field(x)
 
     # -- DETERMINE HOMOGENEOUS STATIONARY SOLUTION
@@ -34,7 +58,7 @@ def findStationarySolution(setup, tol=1e-8):
     # -- COMPOSE INITIAL GUESS FOR STATIONARY SOLUTION
     Ax0_ini = Ax0_loc + (reA0+1j*imA0)
 
-    # -- DETERMINE STATIONARY SOLUTION FOR STANDART LLE (D3=0) USING INITIAL GUESS 
+    # -- DETERMINE STATIONARY SOLUTION FOR STANDART LLE USING INITIAL GUESS 
     A_statSol = stationarySolution(x, Ax0_ini, _LLE_rhs(setup.P, setup.theta), tol)
 
     # -- SAVE DATA
@@ -47,8 +71,25 @@ def findStationarySolution(setup, tol=1e-8):
 
 
 def propagateInitialCondition(setup):
+    """propagate inital condition under the generalized Lugiato-Lefever equation
 
-    # -- CATCH POSSIBLE VALUE ERRORS FROM SETUP SUPPLIED PARAMETERS 
+    uses pseudospectral approach to propagate a user supplied initial condition
+    in terms of the generalized Lugiato-Lefever equation with third and fourth
+    order dispersion.
+
+    Args:
+        setup (object): interface class holding simulation paramters
+
+    Returns: nothing, but saves result in folder ./data/. The stored data
+        consists of
+
+        x (array): discrete x-mesh defining the computational domain
+        t (array): discrete t-mesh defining t-coordinates at which data is stored
+        Axt (array): field obtained during the simulation run
+        info (str): metadata for data-management
+    """
+
+    # -- CATCH POSSIBLE DATATYPE ERRORS OF SUPPLIED PARAMETERS 
     if not isinstance(setup.xMax, float):
         raise ValueError("xMax: expected float, got %s"%(type(setup.xMax)))
 
