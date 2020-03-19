@@ -1,6 +1,9 @@
-"""data_handler.py
+""" data_handler.py
+
+Contains class data structure handling data accumulation and output.
 
 AUTHOR: O. Melchert
+DATE: 2020-01-17
 """
 import os
 import numpy as np
