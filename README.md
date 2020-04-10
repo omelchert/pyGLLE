@@ -1,18 +1,12 @@
 # pyGLLE
 
-Python toolkit for simulating the propagation dynamics of dissipative solitons
-in a variant of the Lugiato-Lefever equation (LLE) described in the manuscript 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-"pyGLLE: A Python toolkit for solving the generalized Lugiato-Lefever equation"
-
-O. Melchert (1,2), and A. Demircan (1,2)
-
-1. Institute of Quantum Optics, Leibnitz Universität Hannover, Welfengarten 1, 30167 Hannover, Germany
-2. Cluster of Excellence PhoenixD, Welfengarten 1, 30167, Hannover, Germany
-
-This repository contains code and data analysis scripts for reproducing the
-simulated data and replication of draft versions of Figures 1 and 2 of the
-manuscript. 
+pyGLLE is a Python toolkit for simulating the propagation dynamics of
+dissipative solitons in a variant of the 
+[Lugiato-Lefever equation](https://en.wikipedia.org/wiki/Lugiato–Lefever_equation) (LLE).
+Including dispersion terms of third and fourth order, this variant is here
+referred to as the generalised LLE (GLLE).
 
 The provided software implements a solver for a variant of the LLE including
 dispersion terms of third and fourth order. It also includes the functionality
@@ -91,6 +85,14 @@ The repository further contains
 For a more detailed description of functions, defined in the above modules,
 their parameters and return values we refer to the example cases and
 documentation provided within the code.
+
+## Availability of the software
+
+The pyGLLE software package is derived from our research software and is meant to work as a (system-)local software tool. There is no need to install it once you got a local [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) of the repository, e.g. via
+
+``$ git clone https://github.com/omelchert/pyGLLE``
+
+We further prepared a [pyGLLE compute capsule](https://codeocean.com/capsule/e0ed77d4-9589-45b4-abc8-3b21f3ce92c8/) on [Code Ocean](https://codeocean.com), allowing to directly run and modify an exemplary simulation without the need to create a local copy of the repository. 
 
 ## Links
 
