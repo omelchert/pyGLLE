@@ -104,7 +104,7 @@ oscillating dissipative solitons in the LLE including third order dispersion
 
 and the dynamics of localized dissipative structures in the generalized LLE with negative quartic group-velocity dispersion 
 
-> O. Melchert, A. Yulin, A. Demircan, "Dynamics of localized dissipative structures in a generalized Lugiato-Lefever model with negative quartic group-velocity dispersion," accepted for publication in Optics Letters (2020-04-13), preliminary DOI: 10.1364/OL.392180 
+> O. Melchert, A. Yulin, A. Demircan, "Dynamics of localized dissipative structures in a generalized Lugiato-Lefever model with negative quartic group-velocity dispersion," accepted for publication in Optics Letters (2020-04-13), preliminary DOI: [10.1364/OL.392180](https://www.doi.org/10.1364/OL.392180)
 
 ## License
 
