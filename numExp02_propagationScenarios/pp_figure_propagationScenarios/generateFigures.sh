@@ -1,1 +1,1 @@
-for F in ../data/*.npz; do python main_figure_propagationDynamics_stationarySolution.py $F; done
+for F in ../data/*.npz; do python3 main_figure_propagationDynamics_stationarySolution.py $F; done

@@ -1,1 +1,1 @@
-python main_figure_stationarySolution.py
+python3 main_figure_stationarySolution.py

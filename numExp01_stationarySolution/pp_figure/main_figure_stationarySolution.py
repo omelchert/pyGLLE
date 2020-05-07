@@ -71,11 +71,11 @@ def generateFigure():
 
     _setKey(axA1,l1+l2,1)
 
-    l1 = axA2.plot(x,np.real(Ax_ini), color='red', dashes=[2,2], label=r'$\sf{Re}[A_{\rm{trial}}(x)]$',zorder=1)
+    l1 = axA2.plot(x,np.real(Ax_ini), color='red', label=r'$\sf{Re}[A_{\rm{trial}}(x)]$',zorder=1)
     l2 = axA2.plot(x,np.real(Ax_opt), color='k', label=r'$\sf{Re}[A_{\rm{opt}}(x)]$',zorder=0)
 
     l3 = axA2.plot(x,np.imag(Ax_ini), color='red', dashes=[2,2], label=r'$\sf{Im}[A_{\rm{trial}}(x)]$',zorder=1)
-    l4 = axA2.plot(x,np.imag(Ax_opt), color='k', label=r'$\sf{Im}[A_{\rm{opt}}(x)]$',zorder=0)
+    l4 = axA2.plot(x,np.imag(Ax_opt), color='k', dashes=[2,2], label=r'$\sf{Im}[A_{\rm{opt}}(x)]$',zorder=0)
 
     axA2.xaxis.set_ticks_position('bottom')
     axA2.yaxis.set_ticks_position('left')
@@ -98,7 +98,7 @@ def generateFigure():
         plt.savefig(fName,format='svg',dpi=600)
     else:
         fName = './FIGS/stationarysolution.png'
-        print '# saved under:', fName
+        print('# saved under:', fName)
         plt.savefig(fName,format='png',dpi=600)
 
 

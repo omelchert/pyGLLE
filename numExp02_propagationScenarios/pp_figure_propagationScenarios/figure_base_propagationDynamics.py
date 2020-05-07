@@ -34,12 +34,10 @@ def generateFigure(x, k, t, At, xLim, xTicks, kLim, kTicks, tLim, tTicks, oName,
        r'\sansmath'               # <- tricky! -- gotta actually tell tex to use!
     ]
 
-    #cmap=mpl.cm.get_cmap('CMRmap')
-    #cmap=mpl.cm.get_cmap('gnuplot')
     cmap=mpl.cm.get_cmap('jet')
 
     fig = plt.figure()
-    plt.subplots_adjust(left=0.08, bottom=0.19, right=0.98, top= 0.8, wspace=0.45, hspace=0.05)
+    plt.subplots_adjust(left=0.08, bottom=0.19, right=0.98, top= 0.78, wspace=0.45, hspace=0.05)
 
     gs00 = GridSpec(1,1)
     gsA = GridSpecFromSubplotSpec(6,5,subplot_spec=gs00[0,0],wspace=0.1, hspace=0.1)
@@ -65,7 +63,7 @@ def generateFigure(x, k, t, At, xLim, xTicks, kLim, kTicks, tLim, tTicks, oName,
                             top=True,
                             size=2,
                             labelsize=4.5,
-                            pad=-1.
+                            pad=0.
                             )
 
         cbar.set_ticks((0,0.2,0.4,0.6,0.8,1.))
@@ -104,7 +102,7 @@ def generateFigure(x, k, t, At, xLim, xTicks, kLim, kTicks, tLim, tTicks, oName,
                                 top=True,
                                 size=2,
                                 labelsize=4.5,
-                                pad=-1.
+                                pad=0.
                                 )
 
             dBLabels = np.asarray([-150,-120,-90,-60,-30,0])
@@ -179,10 +177,6 @@ def generateFigure(x, k, t, At, xLim, xTicks, kLim, kTicks, tLim, tTicks, oName,
     axA2t.tick_params(axis='x',bottom=False, top=False)
     axA2t.tick_params(axis='y',left=False, right=False)
 
-    #for i in range(k.size):
-    #    print k[i], Ik_fin[i]
-    #exit()
-
 
     if DO_FORMAT=='png':
         fName = './FIGS/'+oName+'.png'
@@ -192,6 +186,6 @@ def generateFigure(x, k, t, At, xLim, xTicks, kLim, kTicks, tLim, tTicks, oName,
         plt.savefig(fName,format='svg',dpi=600)
     else:
         fName = './FIGS/'+oName+'.png'
-        print '# saved under:', fName
+        print('# saved under:', fName)
         plt.savefig(fName,format='png',dpi=600)
 

@@ -1,1 +1,1 @@
-python main_findStationarySolution.py
+python3 main_findStationarySolution.py
