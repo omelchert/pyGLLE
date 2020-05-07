@@ -7,8 +7,9 @@ initial condtions in terms of the genaralized LLE.
 AUTHOR: O. Melchert
 DATE: 2020-01-17
 """
-import sys; sys.path.append('../src/')
+import sys #; sys.path.append('../src/')
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 import datetime
 import numpy as np
 import scipy.fftpack as sfft
