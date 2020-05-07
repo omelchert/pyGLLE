@@ -100,7 +100,7 @@ The presented software has been extensively used in our research work,
 including the study of resonant emission of multi-frequency radiation by
 oscillating dissipative solitons in the LLE including third order dispersion
 
-> O. Melchert, A. Demircan, A. Yulin, "Multi-frequency radiation of dissipative solitons in optical fiber cavities," submitted (2020) 
+> O. Melchert, A. Demircan, A. Yulin, "Multi-frequency radiation of dissipative solitons in optical fiber cavities," accepted for publication in Scientific Reports (2020-04-28) 
 
 and the dynamics of localized dissipative structures in the generalized LLE with negative quartic group-velocity dispersion 
 
