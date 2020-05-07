@@ -36,7 +36,7 @@ class DataHandler():
             n (int): current propagation step
             t (numpy-array, ndim=1): time-axis
             x (numpy-array, ndim=1): x coordinate axis
-            Ax (numpy-array, ndim=1): field components 
+            Ax (numpy-array, ndim=1): field components
         """
         if n%self.nSkip==0:
             self.Axt.append(Ax)
@@ -62,11 +62,10 @@ class DataHandler():
             for key, val in sorted(kwargs.items()):
                self.info += "%s: %s\n"%(key,val)
 
-            with open(path + fName + '.npz', 'w') as f:
-                np.savez_compressed(f,
-                        info=self.info,
-                        x=np.asarray(self.x),
-                        t=np.asarray(self.t),
-                        Axt=np.asarray(self.Axt))
+            np.savez_compressed(path + fName,
+                    info=self.info,
+                    x=np.asarray(self.x),
+                    t=np.asarray(self.t),
+                    Axt=np.asarray(self.Axt))
 
 # EOF: data_handler.py 
