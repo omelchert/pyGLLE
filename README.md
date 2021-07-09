@@ -100,11 +100,11 @@ The presented software has been extensively used in our research work,
 including the study of resonant emission of multi-frequency radiation by
 oscillating dissipative solitons in the LLE including third order dispersion
 
-> O. Melchert, A. Demircan, A. Yulin, "Multi-frequency radiation of dissipative solitons in optical fiber cavities," accepted for publication in Scientific Reports (2020-04-28) 
+> O. Melchert, A. Demircan, A. Yulin, "Multi-frequency radiation of dissipative solitons in optical fiber cavities," Scientific Reports 10 (2020) 8849, DOI: [10.1038/s41598-020-65426-x](https://doi.org/10.1038/s41598-020-65426-x).
 
 and the dynamics of localized dissipative structures in the generalized LLE with negative quartic group-velocity dispersion 
 
-> O. Melchert, A. Yulin, A. Demircan, "Dynamics of localized dissipative structures in a generalized Lugiato-Lefever model with negative quartic group-velocity dispersion," accepted for publication in Optics Letters (2020-04-13), preliminary DOI: [10.1364/OL.392180](https://www.doi.org/10.1364/OL.392180)
+> O. Melchert, A. Yulin, A. Demircan, "Dynamics of localized dissipative structures in a generalized Lugiato-Lefever model with negative quartic group-velocity dispersion," Optics Letters 45 (2020) 2764, DOI: [10.1364/OL.392180](https://www.doi.org/10.1364/OL.392180).
 
 ## License
 
