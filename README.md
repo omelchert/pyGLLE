@@ -96,6 +96,10 @@ We further prepared a [pyGLLE compute capsule](https://codeocean.com/capsule/e0e
 
 ## Links
 
+The pyGLLE software package is described in 
+
+> O. Melchert, A. Demircan, "pyGLLE: A Python toolkit for solving the generalized Lugiato–Lefever equation," SoftwareX 15 (2021) 100741, DOI: [10.1016/j.softx.2021.100741](https://doi.org/10.1016/j.softx.2021.100741).
+
 The presented software has been extensively used in our research work,
 including the study of resonant emission of multi-frequency radiation by
 oscillating dissipative solitons in the LLE including third order dispersion
