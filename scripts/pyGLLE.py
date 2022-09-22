@@ -59,7 +59,7 @@ def findStationarySolution(setup, tol=1e-10):
     # -- COMPOSE INITIAL GUESS FOR STATIONARY SOLUTION
     Ax0_ini = Ax0_loc + (reA0+1j*imA0)
 
-    # -- DETERMINE STATIONARY SOLUTION FOR STANDART LLE USING INITIAL GUESS 
+    # -- DETERMINE STATIONARY SOLUTION FOR STANDART LLE USING INITIAL GUESS
     A_statSol = stationarySolution(x, Ax0_ini, _LLE_rhs(setup.P, setup.theta), tol)
 
     # -- SAVE DATA
@@ -90,7 +90,7 @@ def propagateInitialCondition(setup):
         info (str): metadata for data-management
     """
 
-    # -- CATCH POSSIBLE DATATYPE ERRORS OF SUPPLIED PARAMETERS 
+    # -- CATCH POSSIBLE DATATYPE ERRORS OF SUPPLIED PARAMETERS
     if not isinstance(setup.xMax, float):
         raise ValueError("xMax: expected float, got %s"%(type(setup.xMax)))
 
@@ -121,10 +121,10 @@ def propagateInitialCondition(setup):
     if not isinstance(setup.fName, str):
         raise ValueError("fName: expected str, got %s"%(type(setup.fName)))
 
-    # -- ASSEMBLE META-DATA 
+    # -- ASSEMBLE META-DATA
     info = dict()
     info["I01 OS-USER"] = "%s"%(os.path.expanduser('~'))
-    info["I02 OS-ENV"]  = "%s"%(str(os.uname()))
+    info["I02 OS-ENV"]  = "%s"%(str(sys.platform))
     info["I03 OS-PID"]  = "%s"%(str(os.getpid()))
     info["I04 FILE"]    = "%s"%(sys.argv[0])
     info["I05 VERSION"] = "%s"%(__version__)
@@ -140,7 +140,7 @@ def propagateInitialCondition(setup):
     def _GLLE_rhs(P, theta, d2, d3, d4):
         return lambda A: P -(1+1j*theta)*A + sfft.fft((1j*d2*k*k + 1j*d3*k*k*k + 1j*d4*k*k*k*k)*sfft.ifft(A)) + 1j*np.abs(A)**2*A
 
-    # -- SET INITIAL CONDITION 
+    # -- SET INITIAL CONDITION
     Ax0 = setup.initial_field(x)
 
     # -- PROPAGATE FIELD
